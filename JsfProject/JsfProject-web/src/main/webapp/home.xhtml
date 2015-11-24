@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:test="http://example.com/test"
+    xmlns:p="http://primefaces.org/ui">
+        
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  	<title>Jsf Project</title>
+</h:head>
+
+<body>
+	<p:dataTable id="divCity" var="city" value="#{cityView.city}">
+	    <p:column headerText="Id">
+	        <h:outputText value="#{city.id}" />
+	    </p:column>
+	 
+	    <p:column headerText="Name">
+	        <h:outputText value="#{city.name}" />
+	    </p:column>
+	 
+	    <p:column headerText="Country">
+	        <h:outputText value="#{city.country}" />
+	    </p:column>
+	</p:dataTable>
+
+	<h:form>
+		<p:commandButton value="new city" update="divCity"  id="import" actionListener="#{cityView.init()}"></p:commandButton>
+	</h:form>
+	
+</body>
+
+</html>
