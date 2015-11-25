@@ -10,8 +10,7 @@ public class City {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	private String id;
+	private Integer id;
 	private String name;
 	private String country;
 	
@@ -19,12 +18,10 @@ public class City {
 		
 	}
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}

@@ -16,7 +16,6 @@ public class CityView {
 	
 	public void init(){
 		City city = new City();
-		city.setId("000");
 		city.setName("test");
 		city.setCountry("test");
 		
