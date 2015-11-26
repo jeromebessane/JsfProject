@@ -13,33 +13,28 @@
 </h:head>
 
 <body>
-	<h2 style="text-align:center;"> Welcome to City Blog</h2>
-	
-	<ui:repeat value="#{cityView.city}" var="city" id="divCity">
-  		<p:fieldset legend="#{city.name}" toggleable="true" toggleSpeed="500">
-	        <h:panelGrid columns="2" cellpadding="5">
-	            <h:outputText value="#{city.country}"></h:outputText>
-	        </h:panelGrid>
-	    </p:fieldset>
-	</ui:repeat>
-	
-	<h:form>		
+	<h2 style="text-align:center;"> Welcome to City Table</h2>
+	<f:metadata>
+      <f:event type="preRenderView" listener="#{cityView.init()}"/>
+    </f:metadata>
+    <h:form>	
 		<p:dataTable id="divCity" var="city" value="#{cityView.city}">
-	    <p:column headerText="Id">
-	        <h:outputText value="#{city.id}" />
-	    </p:column>
-	 
-	    <p:column headerText="Name">
-	        <h:outputText value="#{city.name}" />
-	    </p:column>
-	 
-	    <p:column headerText="Country">
-	        <h:outputText value="#{city.country}" />
-	    </p:column>
-	</p:dataTable>              
-	    
-		<p:commandButton value="new city" update="divCity"  id="import" actionListener="#{cityView.init()}"></p:commandButton>
+		    <p:column headerText="Id">
+		        <h:outputText value="#{city.id}" />
+		    </p:column>
+		 
+		    <p:column headerText="Name">
+		        <h:outputText value="#{city.name}" />
+		    </p:column>
+		 
+		    <p:column headerText="Country">
+		        <h:outputText value="#{city.country}" />
+		    </p:column>
+		</p:dataTable>              	    	
+		<p:commandButton value="refresh" update="divCity"/>
+		<p:commandButton value="clear" actionListener="#{cityView.clear()}" update="divCity"/>
 	</h:form>
+	
 		
 </body>
 

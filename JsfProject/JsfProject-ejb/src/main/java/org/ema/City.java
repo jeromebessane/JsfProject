@@ -16,8 +16,15 @@ public class City {
 	
 	public City() {
 		
-	}
+	}	
 	
+	public City(String name, String country) {
+		this.name = name;
+		this.country = country;
+	}
+
+
+
 	public Integer getId() {
 		return id;
 	}
